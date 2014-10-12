@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>L.O.G.</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+
+	<header>
+		<h1>L.O.G.</h1>
+		<h2>Legend Of the G'radyn</h2>
+		<nav>
+
+		</nav>
+	</header>
+
+	<section class="scene-battle">
+
+		<div class="char char-mob">
+			<dl>
+				<dt>Name</dt>
+				<dd>{{ battle.mob.name }}</dd>
+
+				<dt>HP</dt>
+				<dd>{{ battle.mob.hp }}</dd>
+			</dl>
+		</div>
+
+
+		<div class="battle-log">
+			{{{ battle.blog }}}
+		</div>
+
+
+		<div class="char char-player">
+			<dl>
+				<dt>Name</dt>
+				<dd>{{ battle.player.name }}</dd>
+
+				<dt>HP</dt>
+				<dd>{{ battle.player.hp }}</dd>
+			</dl>
+		</div>
+
+		<nav>
+			<a data-bind="click: battle.attackMob" href="#">A) Attack</a>
+			<a data-bind="click: battle.runFromMob" href="#">R) Run</a>
+		</nav>
+
+	</section>
+
+
+	<footer>
+		&copy;2014 R.K.Brewer - <a href="#">go behind the scenes</a>
+	</footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
+<script src="js/knockout.mapping-latest.js"></script>
+<script src="js/knockout.punches.min.js"></script>
+
+<script src="js/attack.js"></script>
+<script src="js/battle.js"></script>
+<script src="js/character.js"></script>
+<script src="js/defense.js"></script>
+<script src="js/mob.js"></script>
+<script src="js/player.js"></script>
+<script src="js/run.js"></script>
+<script src="js/caste.js"></script>
+
+<script src="js/warrior.js"></script>
+
+<script src="js/main.js"></script>
+
+
+</body>
+</html>

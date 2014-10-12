@@ -1,0 +1,10 @@
+[
+	{
+		"name":"Slug",
+		"hp":5,
+		"mp":0,
+		"defense":1,
+		"attack":1,
+		"caste":""
+	}
+]
