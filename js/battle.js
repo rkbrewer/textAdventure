@@ -60,7 +60,7 @@ var Battle = (function(){
 		endTurn:function(){
 			this.turnChart.nextTurn();
 			if (this.turnChart.currentTurn() instanceof Mob){
-				this.mob.takeTurn(this.player, this.turnChart);
+				this.mob.takeTurn(this.player, this.turnChart); // mob needs to know about the battle, so it can update the blog
 			}
 		},
 		runFromMob:function(){
