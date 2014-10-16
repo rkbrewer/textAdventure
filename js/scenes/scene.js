@@ -41,10 +41,10 @@ var Scene = (function(){
 
 	$.extend(Scene.prototype, {
 		startScene:function(){
-			sceneManager.createScene(this.name);
+			//TODO sceneManager.createScene(this.name);
 		},
 		endScene:function(){
-			sceneManager.destroyScene(this);
+			//TODO sceneManager.destroyScene(this);
 		}
 	});
 

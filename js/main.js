@@ -22,7 +22,7 @@ $(function(){
 			player: new Player(playerData)
 		};
 
-		viewmodel.scene = ko.observable( new BattleScene(new Scene(player)) );
+		viewmodel.scene = ko.observable( new BattleScene(new Scene(viewmodel.player)) );
 
 		ko.punches.enableAll();
 		ko.applyBindings(viewmodel);
