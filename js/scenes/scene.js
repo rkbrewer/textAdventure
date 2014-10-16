@@ -45,6 +45,9 @@ var Scene = (function(){
 		},
 		endScene:function(){
 			//TODO sceneManager.destroyScene(this);
+			alert('You win all the loots!  Restarting scene.');
+			viewmodel.player.hp(1000);
+			viewmodel.scene(new BattleScene(new Scene(viewmodel.player)) );	//stubbed gunk for prototype
 		}
 	});
 
