@@ -17,12 +17,23 @@ var Character = (function(){
 
 		this.defense = character.defense || 1;
 		this.strength = character.attack || 1;
+
+		this.attackRating = character.attackRating || 1;
+		this.defenseRating = character.defenseRating || 1;
+		this.spellRating = character.spellRating || 1;
+
+		this.luck = character.luck || 1;
 	}
 
 	$.extend(Character.prototype, {
 		attack:function(opponent){
 			return new Attack(this, opponent);
 		},
+
+		defend:function(opponent){
+			return new Defense(this, opponent);
+		},
+
 		run:function(opponent){
 			return new Run(this, opponent);
 		}

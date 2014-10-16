@@ -6,6 +6,9 @@
 		"hp":10,
 		"mp":0,
 		"defense":2,
-		"attack":2
+		"attack":2,
+		"attackRating":1,
+		"defenseRating":1,
+		"spellRating":0
 	}
 ]

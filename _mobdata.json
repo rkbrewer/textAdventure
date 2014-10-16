@@ -5,6 +5,9 @@
 		"mp":0,
 		"defense":1,
 		"attack":1,
-		"caste":""
+		"caste":"",
+		"attackRating":1,
+		"defenseRating":1,
+		"spellRating":0
 	}
 ]
