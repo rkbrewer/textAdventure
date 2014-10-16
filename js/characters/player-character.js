@@ -17,25 +17,11 @@ var Player = (function(){
 		this.level = playerData.level || 1;
 		this.xp = playerData.xp;
 
+		ko.makeObservable(this);
 
-		// Make all properties of a Player observable
-		for (var prop in this){
-			if (this.hasOwnProperty(prop)){
-				if (typeof prop === 'object' && prop instanceof Array){
-
-					this[prop] = ko.observableArray(this[prop]);
-
-				} else if (typeof prop === 'object'){
-
-					this[prop] = ko.mapping.fromJS(prop);
-
-				} else {
-
-					this[prop] = ko.observable(this[prop]);
-
-				}
-			}
-		}
+		this.isDead = ko.computed(function(){
+			return this.hp() === 0;
+		}, this);
 	}
 
 	Player.prototype = new Character();

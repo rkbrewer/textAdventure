@@ -1,0 +1,11 @@
+body { background:#222; color:#ddd; }
+
+
+.scene-battle {
+
+}
+
+.battle-log {
+	height:40px;/* line-height = 20px */
+	overflow:hidden;
+}

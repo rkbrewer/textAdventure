@@ -20,17 +20,15 @@ $(function(){
 			player: player
 		};
 
-		viewmodel.battle = new Battle(player);
+		viewmodel.scene = ko.observable( new BattleScene(new Scene(player)) );
 
 		ko.punches.enableAll();
 		ko.applyBindings(viewmodel);
-
-		// A Router would be super cool, like say, angular's router
-
 
 	});
 
 
 
 
+	// TODO Make a Router.  What's Backbone's made out of?
 });

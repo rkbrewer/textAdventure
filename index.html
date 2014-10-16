@@ -3,6 +3,7 @@
 <head>
 	<title>L.O.G.</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet" />
+	<link href="css/log.css" rel="stylesheet" />
 </head>
 <body>
 
@@ -10,54 +11,20 @@
 
 
 <div class="container">
-
-
 	<header>
-		<h1>L.O.G.</h1>
-		<h2>Legend Of the G'radyn</h2>
+		<h1>LOG</h1>
+		<h2>Legend Of the Ged'radn</h2>
 		<nav>
 
 		</nav>
 	</header>
 
-	<section class="scene-battle">
-
-		<div class="char char-mob">
-			<dl>
-				<dt>Name</dt>
-				<dd>{{ battle.mob.name }}</dd>
-
-				<dt>HP</dt>
-				<dd>{{ battle.mob.hp }}</dd>
-			</dl>
-		</div>
-
-
-		<div class="battle-log">
-			{{{ battle.blog }}}
-		</div>
-
-
-		<div class="char char-player">
-			<dl>
-				<dt>Name</dt>
-				<dd>{{ battle.player.name }}</dd>
-
-				<dt>HP</dt>
-				<dd>{{ battle.player.hp }}</dd>
-			</dl>
-		</div>
-
-		<nav>
-			<a data-bind="click: battle.attackMob" href="#">A) Attack</a>
-			<a data-bind="click: battle.runFromMob" href="#">R) Run</a>
-		</nav>
+	<section class="scene" data-bind="template:{name: scene().name, data:scene }">
 
 	</section>
 
-
 	<footer>
-		&copy;2014 R.K.Brewer - <a href="#">go behind the scenes</a>
+		 &copy;2014 R.K.Brewer - <a href="#">see it on github</a>
 	</footer>
 </div>
 
@@ -68,26 +35,71 @@
 
 
 
+<script id="scene-battle" type="text/html">
+	<div class="char char-mob">
+		<dl>
+			<dt>Name</dt>
+			<dd>{{ mob.name }}</dd>
+
+			<dt>HP</dt>
+			<dd>{{ mob.hp }}</dd>
+		</dl>
+	</div>
+
+
+	<div class="battle-log" data-bind="scrollToBottom: blog">
+		<div class="scrollable" data-bind="html: blog">
+
+		</div>
+	</div>
+
+
+	<div class="char char-player">
+		<dl>
+			<dt>Name</dt>
+			<dd>{{ player.name }}</dd>
+
+			<dt>HP</dt>
+			<dd>{{ player.hp }}</dd>
+		</dl>
+	</div>
+
+	<nav>
+		<a data-bind="click: attackMob" href="#">A) Attack</a>
+		<a data-bind="click: runFromMob" href="#">R) Run</a>
+	</nav>
+</script>
+
+
+
+
+
+
 
 
 <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/knockout/3.2.0/knockout-min.js"></script>
-<script src="js/knockout.mapping-latest.js"></script>
-<script src="js/knockout.punches.min.js"></script>
+<script src="js/vendor/knockout.mapping-latest.js"></script>
+<script src="js/vendor/knockout.punches.min.js"></script>
+<script src="js/vendor/ko.extensions.js"></script>
 
-<script src="js/attack.js"></script>
-<script src="js/battle.js"></script>
-<script src="js/character.js"></script>
-<script src="js/defense.js"></script>
-<script src="js/mob.js"></script>
-<script src="js/player.js"></script>
-<script src="js/run.js"></script>
-<script src="js/caste.js"></script>
+<script src="js/character-actions/attack-action.js"></script>
+<script src="js/character-actions/defense-action.js"></script>
+<script src="js/character-actions/run-action.js"></script>
 
-<script src="js/warrior.js"></script>
+<script src="js/character-castes/caste.js"></script>
+<script src="js/character-castes/warrior-caste.js"></script>
+
+<script src="js/characters/character.js"></script>
+<script src="js/characters/mob-character.js"></script>
+<script src="js/characters/player-character.js"></script>
+
+<script src="js/scenes/battle-scene.js"></script>
+<script src="js/scenes/turn-chart.js"></script>
+<script src="js/scenes/scene.js"></script>
+<script src="js/scenes/scene-manager.js"></script>
 
 <script src="js/main.js"></script>
-
 
 </body>
 </html>
