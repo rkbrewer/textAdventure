@@ -37,9 +37,7 @@ var BattleScene = (function(){
 		endTurn:function(){
 			if ( this.turnChart.currentCharacter().isDead() ){ return this.endScene(); }
 
-			this.turnChart.nextTurn();
-
-			if (this.turnChart.currentCharacter() instanceof Mob){
+			if (this.turnChart.nextTurn() instanceof Mob){
 				this.mob.takeTurn(this);	// pass a reference to the battle
 			}
 		},
@@ -50,15 +48,23 @@ var BattleScene = (function(){
 
 			this.updateBlog(message);
 
-			if (loser.isDead() && loser instanceof Mob){
+			if ( this.isDeadMob(loser) ){
 				// TODO show loot screen
-			} else if (loser.isDead() && loser instanceof Player){
+			} else if ( this.isDeadPlayer(loser) ){
 				// TODO show game over screen
 			} else {
 				// TODO loser drops gold, which goes to the winner
 			}
 
 			this.super.endScene();
+		},
+
+		isDeadMob:function(loser){
+			return loser.isDead() && loser instanceof Mob;
+		},
+
+		isDeadPlayer:function(loser){
+			return loser.isDead() && loser instanceof Player;
 		},
 
 		runFromMob:function(){

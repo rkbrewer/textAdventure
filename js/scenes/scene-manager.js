@@ -6,16 +6,15 @@ var SceneManager = (function(){
 	}
 
 	$.extend(SceneManager.prototype, {
-		createScene:function(someKeyLikeConstructorOrSomething){
+		createScene:function(sceneName){
 
-			var scene = new Scene();
+			// TODO make something
+		},
 
-			if (someKeyLikeConstructorOrSomething === Scene.BATTLE_SCENE){
-				var mob = MobFactory(viewmodel.player);
-				BattleScene(scene, viewmodel.player, mob);//decorator
-			}
+		destroyScene:function(scene){
 
-			viewmodel.scene = scene; // cleanNode first?
+			// TODO break something
+
 		}
 	});
 
