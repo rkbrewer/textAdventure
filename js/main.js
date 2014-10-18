@@ -8,7 +8,7 @@ $(function(){
 
 	// For now, hack github pages to get json (http://www.danielx.net/gh-pages-jsonp)
 	requests.push($.ajax({
-		url:'webbrewer.github.io/textAdventure/_playerdata.json.js',
+		url:'http://webbrewer.github.io/textAdventure/_playerdata.json.js',
 		dataType:'jsonp',
 		jsonpCallback:'webbrewer/textAdventure:_playerdata',
 		success:function(json){
@@ -17,7 +17,7 @@ $(function(){
 	}));
 
 	requests.push($.ajax({
-		url:'webbrewer.github.io/textAdventure/_mobdata.json.js',
+		url:'http://webbrewer.github.io/textAdventure/_mobdata.json.js',
 		dataType:'jsonp',
 		jsonpCallback:'webbrewer/textAdventure:_mobdata',
 		success:function(json){
