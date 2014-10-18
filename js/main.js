@@ -6,13 +6,32 @@ $(function(){
 	window.mobData = '';
 	var requests = [];
 
-	requests.push($.getJSON('_playerdata.json', function(json){
-		window.playerData = json[0];
+	// For now, hack github pages to get json (http://www.danielx.net/gh-pages-jsonp)
+	requests.push($.ajax({
+		url:'webbrewer.github.io/textAdventure/_playerdata.json.js',
+		dataType:'jsonp',
+		jsonpCallback:'webbrewer/textAdventure:_playerdata',
+		success:function(json){
+			window.playerData = json[0];
+		}
 	}));
 
-	requests.push($.getJSON('_mobdata.json', function(json){
-		window.mobData = json[0];
+	requests.push($.ajax({
+		url:'webbrewer.github.io/textAdventure/_mobdata.json.js',
+		dataType:'jsonp',
+		jsonpCallback:'webbrewer/textAdventure:_mobdata',
+		success:function(json){
+			window.mobData = json[0];
+		}
 	}));
+
+//	requests.push($.getJSON('_playerdata.json.js', function(json){
+//		window.playerData = json[0];
+//	}));
+//
+//	requests.push($.getJSON('_mobdata.json.js', function(json){
+//		window.mobData = json[0];
+//	}));
 
 	$.when.apply($, requests).then(function(){
 
