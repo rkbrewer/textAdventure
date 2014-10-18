@@ -5,7 +5,7 @@ $(function(){
 	// TODO move this gunk into a SceneManager somehow
 
 	window.viewmodel = {
-		player: new Player(playerData)
+		player: new Player(window.playerData)
 	};
 
 	viewmodel.scene = ko.observable( new BattleScene(new Scene(viewmodel.player)) );
