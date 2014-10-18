@@ -1,4 +1,6 @@
-[
+// stubbed data
+
+window.mobData = [
 	{	"id":"1",
 		"name":"Slug",
 		"hp":5,

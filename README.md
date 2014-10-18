@@ -3,6 +3,8 @@ textAdventure
 
 An adventure in coding &amp; cold steel. This text adventure is inspired by the 90's BBS hit sensation, LORD (as best I remember it).
 
+[Play it](webbrewer.github.io/textAdventure)!
+
 Road map
 --------
 

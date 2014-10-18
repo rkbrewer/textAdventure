@@ -1,4 +1,6 @@
-[
+// stubbed data
+
+window.playerData = [
 	{
 		"id":"1",
 		"name":"Ryan",
